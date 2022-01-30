@@ -14,17 +14,22 @@ export interface LabelProps {
   /**
    * color by text in the label
    */
-  color?: "primary" | "secondary" | "tertiary";
+   color?: "primary" | "secondary" | "tertiary";
+   /**
+   * font-color by text in the label
+   */
+  fontColor?: string;
 }
 export const Label = ({
   label = "label",
   size = "normal",
-  color = "primary",
+  color,
   allCaps = false,
+  fontColor,
   ...props
 }: LabelProps) => {
   return (
-    <label className={`${size} text-${color} ${allCaps ? 'upper': ''} `} {...props}>
+    <label className={`label ${size}  ${color ? 'text-'+color: ''} ${allCaps ? 'upper': ''}`} style={{color:fontColor}} {...props}>
       {label}
     </label>
   );

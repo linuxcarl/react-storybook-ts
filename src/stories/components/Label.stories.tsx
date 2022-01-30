@@ -5,11 +5,11 @@ import "./label.css";
 export default {
   title: "UI/Label",
   component: Label,
-  argTypes:{
-      color:{
-          control: 'select'
-      }
-  }
+  argTypes: {
+    color: {
+      control: "select",
+    },
+  },
 } as ComponentMeta<typeof Label>;
 const Template: ComponentStory<typeof Label> = (props) => <Label {...props} />;
 
@@ -22,6 +22,13 @@ const tertiary = Template.bind({});
 tertiary.args = {
   size: "normal",
   label: "with color tertiary",
-  color: "tertiary",
+  color: "tertiary"
 };
-export { basic, tertiary };
+
+const CustomFontolor = Template.bind({});
+CustomFontolor.args = {
+  size: "h1",
+  label: "label with fontColor",
+  fontColor: "#1c00ff",
+};
+export { basic, tertiary, CustomFontolor };
